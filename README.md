@@ -26,7 +26,7 @@ This package is perfect for dbt users who want to integrate Asana data into thei
    pip install dlt
    ```
 2. **Configure the Pipeline:**
-   Follow the dlt Asana [pipeline documentation](https://dlthub.com/docs/dlt-ecosystem/verified-sources/asana) to set up your pipeline. Ensure you have your Asana API key and destination credentials configured.
+   Follow the dlt [Asana pipeline documentation](https://dlthub.com/docs/dlt-ecosystem/verified-sources/asana) to set up your pipeline. Ensure you have your Asana API key and destination credentials configured.
 
 3. **Run the Pipeline:**
    Extract and load data from Asana into your data warehouse by running the pipelines.
@@ -63,9 +63,27 @@ dbt_asana/
 │   │   ├── dim_users.sql
 │   │   ├── dim_workspaces__email_domains.sql
 │   │   └── dim_workspaces.sql
-│   ├── staging/  #Same models as dimensions with prefix `stg`
+│   ├── staging/
+│   │   ├── stg__dlt_loads.sql
+│   │   ├── stg_projects__custom_field_settings.sql
+│   │   ├── stg_projects__followers.sql
+│   │   ├── stg_projects__members.sql
+│   │   ├── stg_projects.sql
+│   │   ├── stg_sections.sql
+│   │   ├── stg_stories.sql
+│   │   ├── stg_tags.sql
+│   │   ├── stg_tasks__custom_fields__enum_options.sql
+│   │   ├── stg_tasks__custom_fields.sql
+│   │   ├── stg_tasks__followers.sql
+│   │   ├── stg_tasks__memberships.sql
+│   │   ├── stg_tasks.sql
+│   │   ├── stg_teams.sql
+│   │   ├── stg_users__workspaces.sql
+│   │   ├── stg_users.sql
+│   │   ├── stg_workspaces__email_domains.sql
+│   │   └── stg_workspaces.sql
 │   ├── dlt_active_load_ids.sql
-│   └── dlt_processed_load_ids.sql
+│   ├── dlt_processed_load_ids.sql
 │   └── sources.yml
 ├── tests/
 ├── dbt_project.yml
