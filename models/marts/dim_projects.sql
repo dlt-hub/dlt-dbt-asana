@@ -1,0 +1,29 @@
+/* Table: projects */
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+SELECT
+    t.gid,
+    t.archived,
+    t.color,
+    t.completed,
+    t.created_at,
+    t.default_view,
+    t.icon,
+    t.modified_at,
+    t.name,
+    t.notes,
+    t.owner__gid,
+    t.owner__resource_type,
+    t.permalink_url,
+    t.public,
+    t.resource_type,
+    t.team__gid,
+    t.team__resource_type,
+    t.workspace__gid,
+    t.workspace__resource_type,
+    t._dlt_load_id,
+    t._dlt_id,
+FROM  {{ ref('stg_projects') }} as t
